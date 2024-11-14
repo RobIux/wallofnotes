@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Wall of Notes</title>
+  <link href="/assets/css/main.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.socket.io/4.8.0/socket.io.min.js"
+    integrity="sha384-OoIbkvzsFFQAG88r+IqMAjyOtYDPGO0cqK5HF5Uosdy/zUEGySeAzytENMDynREd"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <p id="tips" class="highlight">'N' to create a new note, 'C' to change the color of the note, 'F' to find a random note.</p>
+  <p id="xy" class="highlight"></p>
+  <a class="highlight" href="https://www.buymeacoffee.com/nonnin" style="position: fixed;
+  z-index: 100; bottom: 10px; right: 25px;">Buy me a coffee</a>
+  <dialog id="input">
+    <div class="note">
+      <pre id="note-input" contenteditable=""></pre>
+    </div>
+    <input type="button" id="post-note" value="Post!">
+    <input type="button" id="cancel-note" value="Cancel">
+  </dialog>
+  <img hidden id="trash-can" src="https://www.greatoutdoorsplay.com/cdn/shop/products/Skyline_trash_can.png?v=1580928757">
+  <script src="/assets/js/main.js"></script>
+</body>
+
+</html>

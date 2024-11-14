@@ -1,0 +1,138 @@
+html,
+body {
+    position: relative;
+    height: 1000000px;
+    width: 1000000px;
+    background-image: url("https://www.tilingtextures.com/wp-content/uploads/2018/12/0074-512x512.jpg") ;
+    background-size: 400px;
+    padding: 0px;
+}
+
+body {
+    border: solid 20px;
+    border-image: url("https://github.com/WallOfMessages/WallOfMessages.github.io/blob/main/frame.jpg?raw=true") 50;
+    border-image-repeat: repeat;
+    border-image-outset: 10px;
+    border-image-width: 40px;
+}
+
+.highlight {
+    background-color: #fbff00;
+}
+
+pre {
+    color: #000000;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    opacity: 0.9;
+    background-color: transparent;
+    border: transparent;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+#tips {
+    position: fixed;
+    z-index: 100;
+}
+#xy {
+    position: fixed;
+    top: 70px;
+    z-index: 100;
+}
+
+#trash-can {
+    position: fixed;
+    bottom: 30px;
+    right: -30px;
+    width: 200px;
+}
+
+dialog {
+    width: 200px;
+    background: transparent;
+    border: none;
+}
+
+dialog .note {
+    transform: translate(0, -10px);
+    position: static;
+}
+
+dialog .note pre {
+    transform: translate(0, 10px);
+    height: calc(100% - 20px);
+    width: calc(100% - 20px);
+    margin: 10px;
+    outline: none;
+}
+
+dialog input {
+    width: 100%;
+    height: 50px;
+    border: none;
+    background-color: rgb(0, 223, 0);
+    box-shadow: inset 3px 3px 3px 0px rgba(255, 255, 255, 0.3), inset -3px -3px 3px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+dialog input:hover {
+    width: 100%;
+    height: 50px;
+    border: none;
+    background-color: rgb(66, 255, 66);
+}
+
+#cancel-note {
+    background-color: rgb(223, 0, 0);
+}
+
+#cancel-note:hover {
+    background-color: rgb(253, 84, 84);
+}
+
+dialog input:active {
+    box-shadow: inset -3px -3px 3px 0px rgba(255, 255, 255, 0.3), inset 3px 3px 3px 0px rgba(0, 0, 0, 0.3);
+}
+
+[contenteditable]:focus {
+    outline: 0px solid transparent;
+}
+
+.note {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-image: url("/assets/images/stickynote-yellow.png");
+    background-size: cover;
+    opacity: 1;
+    z-index: 0;
+}
+
+.focus {
+    z-index: 1;
+    box-shadow: 0px 0px 1px 3px rgba(255, 255, 255, 0.6) inset;
+}
+
+.note pre {
+    height: calc(100% - 20px);
+    width: calc(100% - 20px);
+    margin: 10px;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+pre::-webkit-scrollbar {
+    display: none;
+}
+
+a {
+    color: red;
+    font-weight: 500;
+    z-index: 300;
+}

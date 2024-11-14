@@ -1,0 +1,16 @@
+{
+  "name": "wallofnotes",
+  "version": "1.0.0",
+  "description": "Remake of one of my older projects, wallofmessages.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "socket.io": "^4.8.1"
+  }
+}
