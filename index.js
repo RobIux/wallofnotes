@@ -2,6 +2,7 @@ import express from 'express'
 import http from 'http'
 import { Server } from 'socket.io'
 import fs from 'fs'
+import { type } from 'os'
 
 const app = express()
 const httpServer = http.createServer(app)
@@ -17,6 +18,16 @@ if (!fs.existsSync('notes.json')) {
 app.use(express.static('public'))
 app.use('/assets', express.static('assets'))
 
+function validateNote(note) {
+    if (typeof(note.x) != "number") {
+        return false
+    }
+    if (typeof(note.y) != "number") {
+        return false
+    }
+    return true
+}
+
 io.on('connection', (socket)=>{
     const ipAddress = socket.handshake.headers["x-forwarded-for"].split(",")[0];
     console.log(ipAddress)
@@ -28,22 +39,22 @@ io.on('connection', (socket)=>{
                 limits[ipAddress] = 0
             }
 
-            limits[ipAddress] += 1
+            notes = JSON.parse(notes)
+            limits[ipAddress] += notes.length
 
             if (limits[ipAddress] > limit) {
                 throw new Error("Limit reached")
-            }
-
-            notes = JSON.parse(notes)
-            
-            if (notes.length > 1) {
-                throw new Error("Can only post 1 note at a time")
             }
             
             const notesFile = JSON.parse(fs.readFileSync('notes.json', { encoding: "utf8" }))
 
             Object.keys(notes).forEach(noteID => {
                 const note = notes[noteID]
+                
+                if (!validateNote(note)) {
+                    throw new Error("Bad Note")
+                }
+
                 notesFile[noteID] = note
             });
 
