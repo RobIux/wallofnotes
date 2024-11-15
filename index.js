@@ -34,11 +34,12 @@ io.on('connection', (socket)=>{
                 throw new Error("Limit reached")
             }
 
+            notes = JSON.parse(notes)
+            
             if (notes.length > 1) {
                 throw new Error("Can only post 1 note at a time")
             }
-
-            notes = JSON.parse(notes)
+            
             const notesFile = JSON.parse(fs.readFileSync('notes.json', { encoding: "utf8" }))
 
             Object.keys(notes).forEach(noteID => {
