@@ -25,6 +25,12 @@ function validateNote(note) {
     if (typeof(note.y) != "number") {
         return false
     }
+    if (typeof(note.rotation) != "number") {
+        return false
+    }
+    if (typeof(note.color) != "number") {
+        return false
+    }
     return true
 }
 
