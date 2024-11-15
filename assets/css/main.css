@@ -3,14 +3,14 @@ body {
     position: relative;
     height: 1000000px;
     width: 1000000px;
-    background-image: url("https://www.tilingtextures.com/wp-content/uploads/2018/12/0074-512x512.jpg") ;
+    background-image: url("/assets/images/corkboard.jpg") ;
     background-size: 400px;
     padding: 0px;
 }
 
 body {
     border: solid 20px;
-    border-image: url("https://github.com/WallOfMessages/WallOfMessages.github.io/blob/main/frame.jpg?raw=true") 50;
+    border-image: url("/assets/images/frame.jpg") 50;
     border-image-repeat: repeat;
     border-image-outset: 10px;
     border-image-width: 40px;
