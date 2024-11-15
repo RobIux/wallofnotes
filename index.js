@@ -35,6 +35,11 @@ io.on('connection', (socket)=>{
             }
 
             notes = JSON.parse(notes)
+            
+            if (notes.length > 1) {
+                throw new Error("Can only post 1 note at a time")
+            }
+            
             const notesFile = JSON.parse(fs.readFileSync('notes.json', { encoding: "utf8" }))
 
             Object.keys(notes).forEach(noteID => {
