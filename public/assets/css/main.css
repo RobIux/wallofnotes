@@ -6,6 +6,8 @@ body {
     background-image: url("/assets/images/corkboard.jpg") ;
     background-size: 400px;
     padding: 0px;
+    cursor: grab;
+    overflow: hidden;
 }
 
 body {
